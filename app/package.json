@@ -6,7 +6,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "mocha --reporter spec"
+    "test": "mocha"
   },
   "dependencies": {
     "chai": "^4.2.0",
