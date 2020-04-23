@@ -1,10 +1,10 @@
+const app_values = require('./constants').app_values;
 const express = require('express');
 const app = express();
 const router = express.Router();
 
-const path = __dirname + '/views/';
-const port = 8080;
-
+const path = app_values.path;
+const port = app_values.port;
 router.use(function (req,res,next) {
   console.log('/' + req.method);
   next();

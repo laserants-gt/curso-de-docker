@@ -30,3 +30,4 @@ jobs:
     - run: npm test
       env:
         CI: true
+      working-directory: app
