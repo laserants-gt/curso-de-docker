@@ -5,23 +5,17 @@ on:
 
 jobs:
     Release:
+    build:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@master
-        - name: Tag and prepare release
-          id: tag_and_prepare_release
-          uses: K-Phoen/semver-release-action@master
-          with:
-            release_branch: master
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        - name: Upload release notes
-          if: steps.tag_and_prepare_release.outputs.tag
-          uses: Roang-zero1/github-create-release-action@master
-          with:
-            created_tag: ${{ steps.tag_and_prepare_release.outputs.tag }}
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: '0'
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.17.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
     Publish:
       runs-on: ubuntu-latest
       steps:
