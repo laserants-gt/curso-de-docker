@@ -2,7 +2,7 @@ name: Releases
 
 on:    
     create:
-      tag: ["v*"]
+      tag
 
 jobs:
 
