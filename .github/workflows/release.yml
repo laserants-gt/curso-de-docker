@@ -1,8 +1,7 @@
 name: Releases
 
-on:    
-    create:
-      tag
+on:
+  create
 
 jobs:
 
