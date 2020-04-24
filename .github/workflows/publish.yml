@@ -11,7 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Print echo
-      id: get_version
       run: echo ${GITHUB_REF}
     - name: Get release version
       id: get_version
