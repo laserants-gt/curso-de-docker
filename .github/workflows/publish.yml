@@ -1,7 +1,6 @@
 name: Publish to Registry
 on:    
-  release:
-    types: [published, created, edited]
+  tags: ["v*"]
 
 jobs:
   update:
