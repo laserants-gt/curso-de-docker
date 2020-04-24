@@ -1,10 +1,8 @@
 name: Releases
 
-on:
-  pull_request:
-    types: closed
-    branches:
-      - master
+on:    
+    create:
+      tag: ["v*"]
 
 jobs:
 
