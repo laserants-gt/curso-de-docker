@@ -1,10 +1,8 @@
 name: Publish to Registry
 on:    
-    page_build:
     release:
       types: # This configuration does not affect the page_build event above
         - created
-
 jobs:
   update:
     runs-on: ubuntu-latest
