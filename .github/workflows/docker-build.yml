@@ -2,8 +2,20 @@ name: Publish Docker
 on:
     push:
       branches: [ "master" ]
+
 jobs:
-    update:
+    Code release:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@master
+        - name: Tag and prepare release
+          id: tag_and_prepare_release
+          uses: K-Phoen/semver-release-action@master
+          with:
+            release_branch: master
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    Docker release:
       runs-on: ubuntu-latest
       steps:
       - uses: actions/checkout@master
@@ -16,3 +28,4 @@ jobs:
           name:  yolix/test-app
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+          tags: "latest,${{ env.RELEASE_VERSION }}"
