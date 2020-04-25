@@ -1,10 +1,10 @@
-const app_values = require('./constants').app_values;
+const app_values = require('./constants');
 const express = require('express');
 const app = express();
 const router = express.Router();
 
-const path = app_values.path;
 const port = app_values.port;
+const path = app_values.path;
 router.use(function (req,res,next) {
   console.log('/' + req.method);
   next();
