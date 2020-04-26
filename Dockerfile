@@ -7,4 +7,3 @@ RUN npm install
 COPY --chown=node:node app/ .
 EXPOSE 8080
 CMD ["node","app.js"]
-#line for test
