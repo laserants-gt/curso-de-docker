@@ -1,16 +1,14 @@
-name: Publish docker image
+name: Publish Docker Image
 on:
     push:
-      branches: [ "master"]
-  
-  jobs:
+        branches: ["feature/test-app"]
+jobs:
     build:
-  
-      runs-on: ubuntu-latest
-      steps:
-      - uses: docker/build-push-action@v1
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: myorg/myrepository
-          tags: latest
+        runs-on: ubuntu-latest
+        steps:
+            uses: docker/build-push-action@v1
+            with:
+                username: ${{ secrets.DOCKER_USERNAME }}
+                password: ${{ secrets.DOCKER_PASSWORD }}
+                repository: yolix/test-test
+                tags: latest
