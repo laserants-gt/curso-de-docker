@@ -1,0 +1,16 @@
+{
+  "name": "docker_node_app",
+  "version": "1.0.0",
+  "description": "Aplicación de node",
+  "author": "Yolanda yolanda.lopez@laserants.com",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "express": "^4.16.1",
+    "mocha": "^7.1.1"
+  }
+}

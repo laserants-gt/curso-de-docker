@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+    node-app:
+        image: yolix/node-app:v1
+        networks: 
+            - node-app
+    
+    nginx:
+        image: nginx
+        ports: 
+            - 80:80
+        networks: 
+            - node-app
+        volumes: 
+            - ./nginx.conf:/etc/nginx/conf.d/default.conf
+        
+networks: 
+    node-app:
+        driver: bridge
