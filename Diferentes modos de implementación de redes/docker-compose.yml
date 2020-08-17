@@ -18,3 +18,8 @@ services:
 networks: 
     node-app:
         driver: bridge
+    bd:
+        driver: bridge
+
+        
+

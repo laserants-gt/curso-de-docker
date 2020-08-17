@@ -10,6 +10,7 @@ services:
       MYSQL_ROOT_PASSWORD: example
     volumes:
         - /tmp/data:/var/lib/mysql
+        - /tmp/logs:/var/logs
 
   adminer:
     image: adminer
