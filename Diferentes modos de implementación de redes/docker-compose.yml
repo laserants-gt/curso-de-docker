@@ -1,8 +1,12 @@
 version: "3"
 
 services:
+    
+
     node-app:
         image: yolix/node-app:v1
+        deploy:
+            replicas: 2
         networks: 
             - node-app
     
